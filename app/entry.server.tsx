@@ -119,10 +119,3 @@ function handleBrowserRequest(
     setTimeout(abort, ABORT_DELAY);
   });
 }
-
-// Establish MongoDB connection once server boots up
-connect(process.env.MONGODB_URL as string)
-  .then(() => console.log({ mongoDb: "Connected" }))
-  .catch((err) => {
-    console.log({ mongoErr: err });
-  });
